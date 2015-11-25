@@ -475,3 +475,15 @@ img::-moz-selection {
 body {
     webkit-tap-highlight-color: #222;
 }
+
+.noPointerEvents {
+	pointer-events:none;
+}
+
+.mirror-icon {
+    -webkit-transform: scale(-1, 1);
+    -moz-transform: scale(-1, 1);
+    -ms-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+}
