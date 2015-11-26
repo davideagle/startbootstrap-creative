@@ -275,7 +275,8 @@ header .header-content .header-content-inner p {
     text-align: center;
     color: #fff;
     opacity: 0;
-    background: rgba(240,95,64,.9);
+    background: rgba(45, 45, 45, 0.9);
+    
     -webkit-transition: all .35s;
     -moz-transition: all .35s;
     transition: all .35s;
@@ -486,4 +487,13 @@ body {
     -ms-transform: scale(-1, 1);
     -o-transform: scale(-1, 1);
     transform: scale(-1, 1);
+}
+
+.collapse-border{
+	margin: 0;
+    border: 0;
+}
+
+.head-text-background{
+	background-color: rgba(0,0,0,.3);
 }

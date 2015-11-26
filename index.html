@@ -56,6 +56,9 @@
                         <a class="page-scroll" href="#about">Brúðkaupið</a>
                     </li>
                     <li>
+                        <a class="page-scroll" href="#fun">Fjör</a>
+                    </li>
+                    <li>
                         <a class="page-scroll" href="#signup">Skráning</a>
                     </li>
                     <li>
@@ -79,7 +82,7 @@
             <div class="header-content-inner">
                 <h1>BRÚÐKAUPIÐ 2016</h1>
                 <hr>
-                <p>Þá er komið að partýinu sem allir hafa verið að tala um</p>
+                <p class="head-text-background">Þá er komið að partýinu sem allir hafa verið að tala um</p>
                 <a href="#about" class="btn btn-primary btn-xl page-scroll">Nánari upplýsingar</a>
             </div>
         </div>
@@ -105,7 +108,7 @@
         <div class="container-fluid">
             <div class="row no-gutter">
                 <div class="col-lg-4 col-sm-6">
-                    <a href="#info" class="page-scroll portfolio-box" data-toggle="collapse" data-target="#food-info">
+                    <a href="#info" class="page-scroll portfolio-box" data-toggle="collapse" data-target="#food-info" data-parent="#accordion">
                         <img src="img/portfolio/food.png" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
@@ -120,8 +123,8 @@
                     </a>
                 </div>
                 <div class="col-lg-4 col-sm-6">
-                    <a href="#info" class="page-scroll portfolio-box" data-toggle="collapse" data-target="#music-info">
-                        <img src="img/portfolio/music.jpg" class="img-responsive" alt="">
+                    <a href="#info" class="page-scroll portfolio-box" data-toggle="collapse" data-target="#music-info" data-parent="#accordion">
+                        <img src="img/portfolio/dj.jpg" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
@@ -135,12 +138,12 @@
                     </a>
                 </div>
                 <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
-                        <img src="img/portfolio/3.jpg" class="img-responsive" alt="">
+                    <a href="#info" class="page-scroll portfolio-box" data-toggle="collapse" data-target="#beer-info" data-parent="#accordion">
+                        <img src="img/portfolio/beer.jpg" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
-                                    Category
+                                    Veigar
                                 </div>
                                 <div class="project-name">
                                     Project Name
@@ -155,40 +158,60 @@
     </section>
     
     <div class="panel-group" id="accordion">
-	    <section id="food-info" class="panel-collapse collapse">
-	    	<div class="container">
-	    		<div class="row">
-	    			<div class="col-lg-3 col-md-6 text-center">
-	    				<p>test text</p>
-	    			</div>
-	    		</div>
-	    	</div>
-	    </section>
-	    <section id="music-info" class="panel-collapse collapse">
-	    	<div class="container">
-	    		<div class="row">
-	    			<div class="col-lg-3 col-md-6 text-center">
-	    				<p>test text</p>
-	    			</div>
-	    		</div>
-	    	</div>
-	    </section>
-	    <section id="music-info" class="panel-collapse collapse">
-	    	<div class="container">
-	    		<div class="row">
-	    			<div class="col-lg-3 col-md-6 text-center">
-	    				<p>test text</p>
-	    			</div>
-	    		</div>
-	    	</div>
-	    </section>
+    	<div class="panel panel-default collapse-border">
+		    <section id="food-info" class="panel-collapse collapse">
+		    	<div class="container">
+		    		<div class="row">
+		    			<div class="col-lg-8 col-lg-offset-2 text-center">
+		                    <h2 class="section-heading">Matur</h2>
+		                    <hr class="primary">
+		                    <p>Fyrir þá sem eru að hugleiða einhverjar gjafir fyrir okkur</p>
+		                    <i class="fa fa-4x fa-gift wow bounceIn text-primary" data-wow-delay=".3s"></i>
+			                <br/>
+		                </div>
+		    		</div>
+		    	</div>
+		    </section>
+		</div>
+	    
+	    <div class="panel panel-default collapse-border">
+		    <section id="music-info" class="panel-collapse collapse">
+		    	<div class="container">
+		    		<div class="row">
+		    			<div class="col-lg-8 col-lg-offset-2 text-center">
+		                    <h2 class="section-heading">Tónlist</h2>
+		                    <hr class="primary">
+		                    <p>Fyrir þá sem eru að hugleiða einhverjar gjafir fyrir okkur</p>
+		                    <i class="fa fa-4x fa-volume-up wow bounceIn text-primary" data-wow-delay=".3s"></i>
+			                <br/>
+		                </div>
+		    		</div>
+		    	</div>
+		    </section>
+	    </div>
+	    
+	    <div class="panel panel-default collapse-border">
+		    <section id="beer-info" class="panel-collapse collapse">
+		    	<div class="container">
+		    		<div class="row">
+		    			<div class="col-lg-8 col-lg-offset-2 text-center">
+		                    <h2 class="section-heading">Veigar</h2>
+		                    <hr class="primary">
+		                    <p>Fyrir þá sem eru að hugleiða einhverjar gjafir fyrir okkur</p>
+		                    <i class="fa fa-4x fa-glass wow bounceIn text-primary" data-wow-delay=".3s"></i>
+			                <br/>
+		                </div>
+		    		</div>
+		    	</div>
+		    </section>
+	    </div>
 	</div>
 	
-    <section id="services">
+    <section id="fun">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Gjafir</h2>
+                    <h2 class="section-heading">Fjör</h2>
                     <hr class="primary">
                 </div>
             </div>
@@ -222,6 +245,9 @@
                         <h3>Made with Love</h3>
                         <p class="text-muted">You have to make your websites with love these days!</p>
                     </div>
+                </div>
+                <div class="text-center">
+                	<a href="#signup" class="fa fa-4x fa-angle-double-down wow bounceIn text-primary page-scroll" data-wow-delay=".3s"></a>
                 </div>
             </div>
         </div>
@@ -289,7 +315,7 @@
                     <p class="text-faded">Klukkan 21:00 hefst svo partýið fyrir alvöru þar sem úrvala lið plötusnúða koma fram</p>
                     <i class="fa fa-4x fa-fort-awesome wow bounceIn text-faded" data-wow-delay=".3s"></i>
                     <br/>
-                    <a href="#contact" class="fa fa-4x fa-angle-double-down wow bounceIn text-faded page-scroll" data-wow-delay=".3s"></a>
+                    <a href="#gifts" class="fa fa-4x fa-angle-double-down wow bounceIn text-faded page-scroll" data-wow-delay=".3s"></a>
                 </div>
     		</div>
     	</div>
