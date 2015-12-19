@@ -511,3 +511,8 @@ body {
    left: 0; 
    width: 100%; 
 }
+
+.fpage-heading {
+	border-radius: 25px;
+	padding: 20px; 
+}
