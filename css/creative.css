@@ -507,7 +507,7 @@ body {
 
 .scroll-over { 
    position: absolute; 
-   bottom: 70px; 
+   bottom: 7%; 
    left: 0; 
    width: 100%; 
 }
