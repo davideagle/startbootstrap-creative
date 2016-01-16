@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="bryllup">
 
 <head>
 
@@ -31,6 +31,9 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    
+    <!-- angular -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
 
 </head>
 
@@ -122,33 +125,51 @@
     
     <section class="bg-dark">
         <div class="container text-center">
-        	<div id="registerCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
-				<!-- Wrapper for slides -->
-				<div class="carousel-inner" role="listbox">
+
 					<div class="item active">
         				<div class="row">
         					<div class="col-md-6 text-center">
 								<h2 class="section-heading">Upplýsingar!</h2>
                 				<hr class="light">
                 				<div>
-                				Á boðskortinu sem þú fékst sent í pósti er skráður boðskóði sem þú slærð inn ásamt netfangi til 
-                				þess að staðfesta komu þína í brúðkaupið.
-                			</div>
-			 			</div>
-        				<div class="col-md-6 text-center">
+                					Á boðskortinu sem þú fékst sent í pósti er skráður boðskóði sem þú slærð inn ásamt netfangi til 
+                					þess að staðfesta komu þína í brúðkaupið.
+                				</div>
+			 				</div>
+        			<div class="col-md-6 text-center form-group has-feedback" ng-controller="registerController">
 	        			<form role="form">
 	        				<h2 class="section-heading">Skráning!</h2>
                     		<hr class="light">
 							<div class="form-group">
 			      				<label for="email">Netfang:</label>
-			      				<input type="email" class="form-control" id="email" placeholder="Sláðu inn netfang">
+			      				<input type="email" class="form-control text-uppercase" name="email" placeholder="Sláðu inn netfang" ng-model="Invite.email" required>
 			    			</div>
 			    			<div class="form-group">
 			      				<label for="code">Boðskóði:</label>
-			      				<input type="text" class="form-control" id="code" placeholder="Boðskóði">
+			      				<input type="text" class="form-control text-uppercase" name="invitecode" placeholder="Boðskóði" ng-model="Invite.invitecode" required>
 			    			</div>
-			    			<button data-slide="next" type="submit" class="btn btn-primary btn-xl page-scroll">Senda</button>
+			    			<div ng-repeat="person in persons" class="container-fluid">
+			    				<div class="form-group has-feedback" ng-class="getFormStatus(person)">
+      								<label class="col-sm-2 control-label no-padding" for="inputSuccess">
+      									<input type="checkbox" class="form-control" ng-model="person.registered" ng-true-value="'true'" ng-false-value="false"></input>
+      								</label>
+      								<div class="col-sm-10 no-padding">
+        								<input type="text" class="form-control" ng-model="person.name" id="inputError" disabled>
+        								<span class="glyphicon form-control-feedback" ng-class="getIconClass(person)"></span>
+      								</div>
+    							</div>
+							</div>
+			    			<button data-slide="next" type="submit" ng-Click="register()" class="btn btn-primary btn-xl page-scroll">Senda</button>
+			    			
+			    			
 			  			</form>
+						{{ formTest }}
+						<div ng-show="error" class="service-box">
+							<div class="alert alert-danger"><strong>Boðskóði fannst ekki</strong></div>
+						</div>
+						<div ng-show="success" class="service-box">
+							<div class="alert alert-success"><strong>Skráning móttekin</strong></div>
+						</div>
 			 		</div>
 			 	</div>
 			 	<div class="service-box">
@@ -157,10 +178,6 @@
                 	<a href="#info" class="fa fa-4x fa-angle-double-down wow bounceIn text-faded page-scroll" data-wow-delay=".2s"></a>
             	</div>
         	</div>
-        	<div class="item">Spinning wheel wait</div>
-        	<div class="item"></div>
-        	</div>
-        </div>
         </div>
 	</section>
     
@@ -386,8 +403,16 @@
         </small>
         </iframe>
     </section>
-    
-    <section id="gifts">
+
+	<section id="gifts" class="siminn-ad no-padding">
+		<div class="container-fluid">
+            <div class="row no-gutter" style="position:relative;">
+				<img src="img/portfolio/giftsbanner.jpg" class="img-responsive" alt="">
+			</div>
+		</div>
+	</section>
+
+    <section>
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
@@ -450,6 +475,11 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="js/creative.js"></script>
+    
+    
+    <script src="public/app.js"></script>
+	
+	</script>
 
 </body>
 
