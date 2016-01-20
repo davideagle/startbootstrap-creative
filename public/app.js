@@ -1,10 +1,6 @@
 angular.module('bryllup', [])
 	.controller('registerController', ['$scope', '$http', function($scope, $http) {
 		
-		var inviteObj = new Object();
-		inviteObj.email = "davidoj@siminn.is";
-		inviteObj.invitecode ='AAAA';
-		
 		$scope.Invite = {};
         $scope.errorMessage = '';
         $scope.formTest = $scope.Invite;
@@ -24,13 +20,14 @@ angular.module('bryllup', [])
                 }
             }
         
-        $scope.register = function(persons) {
+        $scope.register = function() {
         	//$scope.formTest = "whhop"; 
         	$http.post('http://localhost:10000/api/invites/register', $scope.Invite, config)
         		.success(function(response)
         				{
 
     						//$scope.formTest = response;
+        					$scope.Invite = response;
         					$scope.persons = response.persons;
         					$scope.responseCode = response.$status
         					$scope.error = null;
@@ -47,16 +44,39 @@ angular.module('bryllup', [])
         	//$http.get("http://localhost:10000/api/invites/list").success(function(response){$scope.formTest = response;});
         }
         
+        $scope.update = function(persons) {
+
+        	
+        	$http.post('http://localhost:10000/api/invites/update', $scope.Invite, config)
+    		.success(function(response)
+    				{
+
+						//$scope.formTest = response;
+    					$scope.Invite.persons = response.persons;
+    					$scope.responseCode = response.$status
+    					$scope.error = null;
+    					$scope.success = true;
+    					
+    				})
+    		.error(function(data, status, header, config) 
+    				{
+    				    $scope.error = "error";
+    				    $scope.persons = null;
+    				    $scope.formTest = null;
+    				    $scope.success = false;
+    				});
+        }
+        
         $scope.getIconClass = function(person) {
-            if(person.registered == "true"){
+            if(person.registered == true){
             	return "glyphicon-ok ";
             } else {
             	return "glyphicon-remove ";
             }
         	
          }
-        $scope.getFormStatusClass = function(person) {
-            if(person.registered == "true"){
+        $scope.getFormStatus = function(person) {
+            if(person.registered == true){
             	return "inputSuccess ";
             } else {
             	return "inputError ";
@@ -64,9 +84,9 @@ angular.module('bryllup', [])
         	
          }
         
-        $scope.getFormStatus = function(person) {
-            if(person.registered == "true"){
-            	return "has-success ";
+        $scope.getFormStatusClass = function(person) {
+            if(person.registered == true){
+            	return "has-success inviteRegistered";
             } else {
             	return "has-error ";
             }

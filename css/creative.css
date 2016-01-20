@@ -523,3 +523,7 @@ body {
   outline: 0;
  }
  
+.inviteRegistered{
+	text-color: rgb(60,​ 118,​ 61);
+	font-weight: 700;
+}
