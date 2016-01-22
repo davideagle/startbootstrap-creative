@@ -3,7 +3,6 @@ angular.module('bryllup', [])
 		
 		$scope.Invite = {};
         $scope.errorMessage = '';
-        $scope.formTest = $scope.Invite;
         
         //{ invitecode: 'AAAA', email: 'janamaren@gmail.com' }
         
@@ -21,8 +20,11 @@ angular.module('bryllup', [])
             }
         
         $scope.register = function() {
-        	//$scope.formTest = "whhop"; 
-        	$http.post('http://localhost:10000/api/invites/register', $scope.Invite, config)
+        	$scope.test = $scope.Invite
+        	var invite = $scope.Invite
+        	$scope.formemail = $scope.Invite.email
+        	// Post í chrome er ekki að senda scope.invite
+        	$http.post('http://localhost:10000/api/invites/register', invite)
         		.success(function(response)
         				{
 
