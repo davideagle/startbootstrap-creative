@@ -4,27 +4,9 @@ angular.module('bryllup', [])
 		$scope.Invite = {};
         $scope.errorMessage = '';
         
-        //{ invitecode: 'AAAA', email: 'janamaren@gmail.com' }
-        
-        var config = {
-                headers : {
-                    'Content-Type': 'application/json; charset=utf-8',
-                    'host': 'localhost:10000',
-                    'connection': 'keep-alive',
-                    'content-type': 'application/json',
-                    'accept': '*/*',
-                    'accept-encoding': 'gzip, deflate',
-                    'accept-language': 'en-US,en;q=0.8,is;q=0.6',
-                    'Access-Control-Allow-Origin': '*',
-                }
-            }
-        
         $scope.register = function() {
-        	$scope.test = $scope.Invite
-        	var invite = $scope.Invite
-        	$scope.formemail = $scope.Invite.email
-        	// Post í chrome er ekki að senda scope.invite
-        	$http.post('http://localhost:10000/api/invites/register', invite)
+        	
+        	$http.post('http://localhost:10000/api/invites/register', $scope.Invite)
         		.success(function(response)
         				{
 
@@ -42,14 +24,12 @@ angular.module('bryllup', [])
         				    $scope.formTest = null;
         				});
         	
-        	
-        	//$http.get("http://localhost:10000/api/invites/list").success(function(response){$scope.formTest = response;});
         }
         
         $scope.update = function(persons) {
 
         	
-        	$http.post('http://localhost:10000/api/invites/update', $scope.Invite, config)
+        	$http.post('http://localhost:10000/api/invites/update', $scope.Invite)
     		.success(function(response)
     				{
 
