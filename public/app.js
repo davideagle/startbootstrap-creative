@@ -7,7 +7,7 @@ angular.module('bryllup', [])
         var httpDomain = 'http://' + $location.host();
         
         $scope.register = function() {
-        	var path = httpDomain + '/api/invites/register'
+        	var path = httpDomain + '/api/invites/register';
         	$http.post(path, $scope.Invite)
         		.success(function(response)
         				{
@@ -30,8 +30,8 @@ angular.module('bryllup', [])
         
         $scope.update = function(persons) {
 
-        	var path = httpDomain + '/api/invites/update'
-        	$http.post(httpDomain, $scope.Invite)
+        	var path = httpDomain + '/api/invites/update';
+        	$http.post(path, $scope.Invite)
     		.success(function(response)
     				{
 
