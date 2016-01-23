@@ -4,7 +4,7 @@ angular.module('bryllup', [])
 		$scope.Invite = {};
         $scope.errorMessage = '';
         
-        var httpDomain = 'http://' + $location
+        var httpDomain = 'http://' + $location.host();
         
         $scope.register = function() {
         	var path = httpDomain + '/api/invites/register'
