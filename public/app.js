@@ -30,8 +30,8 @@ angular.module('bryllup', [])
         
         $scope.update = function(persons) {
 
-        	
-        	$http.post('http://$location/api/invites/update', $scope.Invite)
+        	var path = httpDomain + '/api/invites/update'
+        	$http.post(httpDomain, $scope.Invite)
     		.success(function(response)
     				{
 
