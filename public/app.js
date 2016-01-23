@@ -4,9 +4,11 @@ angular.module('bryllup', [])
 		$scope.Invite = {};
         $scope.errorMessage = '';
         
+        var httpDomain = 'http://' + $location
+        
         $scope.register = function() {
-        	
-        	$http.post('http://$location/api/invites/register', $scope.Invite)
+        	var path = httpDomain + '/api/invites/register'
+        	$http.post(path, $scope.Invite)
         		.success(function(response)
         				{
 
