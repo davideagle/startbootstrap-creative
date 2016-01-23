@@ -6,7 +6,7 @@ angular.module('bryllup', [])
         
         $scope.register = function() {
         	
-        	$http.post('http://localhost:10000/api/invites/register', $scope.Invite)
+        	$http.post('http://$location/api/invites/register', $scope.Invite)
         		.success(function(response)
         				{
 
@@ -29,7 +29,7 @@ angular.module('bryllup', [])
         $scope.update = function(persons) {
 
         	
-        	$http.post('http://localhost:10000/api/invites/update', $scope.Invite)
+        	$http.post('http://$location/api/invites/update', $scope.Invite)
     		.success(function(response)
     				{
 
