@@ -1,5 +1,5 @@
 angular.module('bryllup', [])
-	.controller('registerController', ['$scope', '$http', function($scope, $http) {
+	.controller('registerController', ['$scope', '$http', '$location', function($scope, $http, $location) {
 		
 		$scope.Invite = {};
         $scope.errorMessage = '';
