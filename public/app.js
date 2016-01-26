@@ -51,6 +51,14 @@ angular.module('bryllup', [])
     				});
         }
         
+        $scope.submit = function(persons){
+        	if (persons == null){
+        		$scope.register();
+        	} else {
+        		$scope.update(persons);
+        	}
+        }
+        
         $scope.getIconClass = function(person) {
             if(person.registered == true){
             	return "glyphicon-ok ";

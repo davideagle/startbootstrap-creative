@@ -141,7 +141,7 @@
                 				
 			 				</div>
         			<div class="col-md-6 text-center form-group has-feedback" ng-controller="registerController">
-	        			<form role="form">
+	        			<form role="form" ng-submit="submit(persons)">
 	        				<h2 class="section-heading">Skráning!</h2>
                     		<hr class="light">
 							<div class="form-group">
@@ -165,10 +165,10 @@
     							
 							</div>
 							
-							<button ng-show="persons" ng-disabled="success" type="submit" ng-Click="update(persons)" class="btn btn-primary btn-xl page-scroll">Skrá</button>
-			    			<button ng-hide="persons" type="submit" ng-Click="register()" class="btn btn-primary btn-xl page-scroll">Senda</button>
+							<button ng-show="persons" ng-disabled="success" type="submit" ng-submit="submit(persons)" class="btn btn-primary btn-xl page-scroll">Skrá</button>
+			    			<button ng-hide="persons" type="submit" ng-submit="submit(persons)" class="btn btn-primary btn-xl page-scroll">Senda</button>
 			    			
-			    			
+			    			{{ test }}
 			  			</form>
 
 						<div ng-show="error" class="service-box">
